@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @NoArgsConstructor
@@ -17,7 +20,8 @@ public class AppRolesEntity {
     private int id;
     @Column(unique = true, length = 100, nullable = false)
     private String nom;
-
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<AppUserEntity> appUserEntities = new ArrayList<AppUserEntity>();
 
 
 }
