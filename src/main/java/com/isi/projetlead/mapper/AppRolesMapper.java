@@ -1,4 +1,13 @@
 package com.isi.projetlead.mapper;
 
-public class AppRolesMapper {
+
+import com.isi.projetlead.domaine.AppRoles;
+import com.isi.projetlead.entities.AppRolesEntity;
+import org.mapstruct.Mapper;
+
+@Mapper
+public interface AppRolesMapper {
+    AppRoles toAppRoles(AppRolesEntity appRolesEntity);
+    AppRolesEntity fromAppRoles(AppRoles appRoles);
 }
+
